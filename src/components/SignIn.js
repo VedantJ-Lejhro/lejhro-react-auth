@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Fragment } from "react/cjs/react.production.min"
 import styles from "./login.module.css"
-const Login = () => {
+const SignIn = () => {
     const [showPassword, setShowPassword] = useState(false)
     const passwordDisplay = () => {
         setShowPassword(!showPassword)
@@ -18,11 +18,12 @@ const Login = () => {
                     <input type="email" placeholder="E-mail" />
                     <h4>Password</h4>
                     <input type={showPassword ? "text" : "password"} placeholder="Password" />
-                    <button type="submit">Login</button>
+                    <p> <input type="checkbox"  /> Admin ? </p>
+                    <button type="submit">Sign In</button>
                 </form>
                 <button  className={styles.showPassword} onClick={passwordDisplay}>{showPassword?"hide":"show"} password</button>
             </div>
         </Fragment>
     )
 }
-export default Login
+export default SignIn
